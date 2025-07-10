@@ -1,0 +1,43 @@
+package com.cts.service;
+
+import java.util.List;
+
+import com.cts.dto.AuthorDto;
+import com.cts.dto.BookDto;
+import org.springframework.web.multipart.MultipartFile;
+
+public interface IBookService {
+
+//	Book addBook(Book book);
+	List<BookDto> viewAllBooks();
+
+	void uploadBookImage(Long bookId, MultipartFile image);
+
+	BookDto getBookById(Long bookId);
+
+	BookDto updateBookById(Long bookId, BookDto bookDto);
+
+	void deleteBookById(Long bookId);
+
+	BookDto addBook(BookDto bookDto);
+
+	List<BookDto> findBooksByCategoryName(String catName);
+
+	List<BookDto> findBooksByAuthorName(String authName);
+
+	List<BookDto> findBooksByTitle(String title);
+
+	List<BookDto> getBooksByAuthorId(Long authorId);
+
+	List<BookDto> getBooksByCategoryId(Long categoryId);
+
+	String purchaseBook(Long bookId, int quantity);
+
+	BookDto findBookByIsbn(String isbn);
+
+	List<BookDto> findBooksByPriceRange(double min, double max);
+	List<BookDto> getRandomBooks(Long count);
+
+	AuthorDto getAuthorByBookId(Long bookId);
+
+}
